@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    height: 100vh;
+    font: 1rem Inconsolata, monospace;
+    text-shadow: 0 0 1px #C8C8C8;
+}
+
+input {
+    border: none; /* Removes the default border */
+}
+
+input:focus {
+    outline: none /* Removes the border when the input is clicked */
+}

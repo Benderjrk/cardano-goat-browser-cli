@@ -22,8 +22,9 @@ const Home: NextPage = () => {
           <div>{} 
             <span className="text-zinc-400">goat@browser</span>
             <span className="text-cyan-500"> ~ </span>
-            <span className="text-green-500">-&gt;</span>
-            <input type="text" id="terminal" name="terminal" placeholder="|" className="w-80 bg-zinc-900 text-zinc-400"/>
+            <span className="text-green-500">-&gt; </span>
+            <input type="text" id="terminal" name="terminal" placeholder="_" className="w-80 bg-zinc-900 text-zinc-400 " />
+            
           </div>
       </main>
     </>
