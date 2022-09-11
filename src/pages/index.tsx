@@ -40,7 +40,7 @@ const Home: NextPage = () => {
             <span className="text-cyan-500"> ~ </span>
             <span className="text-green-500">-&gt; </span>
               <label htmlFor="terminal" hidden>Terminal Simulation</label>
-              <input type="text" id="terminal" name="terminal" placeholder="_" className="w-80 bg-zinc-900 text-zinc-400" required/>
+              <input type="text" id="terminal" name="terminal" placeholder="_" className="w-80 bg-zinc-900 text-zinc-400" required autoComplete="off"/>
               <button type="submit" hidden>Submit</button>
             </form>
           </div>
