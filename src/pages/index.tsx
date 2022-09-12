@@ -1,9 +1,10 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { format } from "date-fns";
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { userAgentFromString } from "next/server";
 import Link from "next/link";
+import Nav from "../components/nav";
 
 const Home: NextPage = () => {
   const [command, setCommand] = useState<string[] | undefined>();
@@ -30,10 +31,10 @@ const Home: NextPage = () => {
       if (data.command === "clear" && command[0] !== undefined) {
         setCommand([command[0]]);
       } else {
-        if (command.length > 2) {
+        if (command.length > 10) {
           setCommand([
             ...command.slice(0, 1),
-            ...command.slice(-2),
+            ...command.slice(-10),
             data.command,
           ]);
         } else {
@@ -45,7 +46,13 @@ const Home: NextPage = () => {
     }
 
     form.terminal.value = "";
+    scrollTo(0, document.body.scrollHeight);
   };
+
+  useEffect(() => {
+    // scroll to bottom of screen
+    window.scrollTo(0, document.body.scrollHeight);
+  });
 
   return (
     <>
@@ -56,23 +63,8 @@ const Home: NextPage = () => {
       </Head>
 
       <main className="gap-1 min-h-screen p-4 bg-zinc-900 cursor-text divide-dashed hover:divide-y">
-        <nav className="mb-2 grid grid-cols-3">
-          <div>
-            <Link href="/">
-              <a className="text-zinc-400">1)home</a>
-            </Link>
-          </div>
-          <div>
-            <Link href="/">
-              <a className="text-zinc-400">2)bash</a>
-            </Link>
-          </div>
-          <div>
-            <Link href="/">
-              <a className="text-zinc-400">2)vim</a>
-            </Link>
-          </div>
-        </nav>
+        <Nav></Nav>
+
         <div className="flex flex-col pt-2">
           <h1 className="mx-auto text-indigo-300">G.O.A.T. Terminal</h1>
           <div className="text-zinc-400">
