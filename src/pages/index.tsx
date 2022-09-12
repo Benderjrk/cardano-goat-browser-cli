@@ -131,7 +131,7 @@ const Home: NextPage = () => {
                           <span className="text-indigo-400">social links</span> - print out links to social media
                         </div>
                         <div className="mb-2">
-                          <span className="text-indigo-400">wallet connect</span> - connect to cardano wallet
+                          <span className="text-indigo-400">wallet connect</span> - connect to cardano wallet (only on browser)
                         </div>
                       </div>
                     </div>
