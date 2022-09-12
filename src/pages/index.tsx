@@ -46,7 +46,6 @@ const Home: NextPage = () => {
     }
 
     form.terminal.value = "";
-    scrollTo(0, document.body.scrollHeight);
   };
 
   useEffect(() => {
