@@ -40,15 +40,14 @@ const WalletConnectButtons = () => {
         ))}
       </div>
       <ul className="">
-        <li className="break-words my-2">Address: {address}</li>
-        <li className="my-2">Network: {network}</li>
+        <li className="my-2">Network: {(network === 1) ? 'mainnet' : 'testnet'}</li>
         <li className="my-2">
           Balance:{" "}
           {typeof lovelaceBalance === "number" &&
-            `${lovelaceBalance / 1000000}ADA`}
+            `${lovelaceBalance / 1000000} ADA`}
         </li>
         <li className="my-2">Selected wallet: {selectedWallet}</li>
-        <li className="my-2">Connected wallet: {connectedWallet}</li>
+        <li className="my-2 text-emerald-500">Is connected: {connectedWallet}</li>
       </ul>
     </>
   );

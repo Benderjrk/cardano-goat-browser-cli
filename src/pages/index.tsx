@@ -3,7 +3,6 @@ import Head from "next/head";
 import { format } from "date-fns";
 import { FormEvent, useEffect, useState } from "react";
 import { userAgentFromString } from "next/server";
-import Link from "next/link";
 import Nav from "../components/nav";
 import SocialLinks from "../components/social_links";
 import WalletConnectButtons from "../components/wallet_connect";
