@@ -32,10 +32,10 @@ const Home: NextPage = () => {
       if (data.command === "clear" && command[0] !== undefined) {
         setCommand([command[0]]);
       } else {
-        if (command.length > 10) {
+        if (command.length > 2) {
           setCommand([
             ...command.slice(0, 1),
-            ...command.slice(-10),
+            ...command.slice(-2),
             data.command,
           ]);
         } else {
@@ -49,10 +49,10 @@ const Home: NextPage = () => {
     form.terminal.value = "";
   };
 
-  useEffect(() => {
-    // scroll to bottom of screen
-    window.scrollTo(0, document.body.scrollHeight);
-  });
+  // useEffect(() => {
+  //   // scroll to bottom of screen
+  //   window.scrollTo(0, document.body.scrollHeight);
+  // });
 
   return (
     <>
@@ -201,7 +201,7 @@ const Home: NextPage = () => {
               id="terminal"
               name="terminal"
               placeholder="_"
-              className="bg-zinc-900 text-zinc-400 min-w-[40%]"
+              className="bg-zinc-900 text-zinc-400 min-w-[40%] motion-safe:animate-pulse"
               required
               autoComplete="off"
               maxLength={50}

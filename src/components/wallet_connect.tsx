@@ -1,4 +1,3 @@
-import Link from "next/link";
 import useCardanoWallet, { WalletName } from "@asterium-dev/use-cardano-wallet";
 
 const WalletConnectButtons = () => {
